@@ -1,5 +1,6 @@
 const express = require("express");
 const registrarUsuarios = require("../controllers/registrarUsuarios");
+const loginUsuarios = require("../controllers/loginUsuarios");
 
 
 
@@ -13,6 +14,6 @@ router.get("/", (req, res) => {
 
 // Registar Usuarios
 router.post("/registro-usuarios", registrarUsuarios);
-
+router.post("/login", loginUsuarios)
 
 module.exports = router;
