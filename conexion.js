@@ -1,13 +1,25 @@
-const { Client } = require('pg');
+const { config } = require('dotenv');
 
-// Configuración de la conexión a PostgreSQL
-const conectar = new Client({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'prueba',
-  password: 'marquinho1701',
-  port: 5432, // Puerto predeterminado de PostgreSQL
-});
+// const { Client } = require('pg');
+
+
+// // Configuración de la conexión a PostgreSQL
+// const conectar = new Client({
+//   user: 'marco',
+//   host: 'dpg-clqa0kggqk6s738qtk4g-a',
+//   database: 'backendnube',
+//   password: '0GLcZvOndGM1PGRbynoLqcQn31D3Ao0r',
+//   port: 5432, // Puerto predeterminado de PostgreSQL
+// });
+
+const pg = require('pg');
+
+config()
+
+const conectar = new pg.Pool({
+  connectionString: process.env.DATABASE_URL,
+  // ssl:true
+})
 
 // Función para conectar y manejar la lógica de conexión
 async function conectarBaseDeDatos() {
