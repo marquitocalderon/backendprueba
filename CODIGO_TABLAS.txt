@@ -9,6 +9,9 @@ CREATE TABLE usuarios (
     idusuario SERIAL PRIMARY KEY,
     nombre_completo VARCHAR(50) NOT NULL,
     dni VARCHAR(08) UNIQUE NOT NULL,
+    departamento VARCHAR(50) NOT NULL,
+    provincia VARCHAR(50) NOT NULL,
+    distrtio VARCHAR(50) NOT NULL,
     usuario VARCHAR(50) UNIQUE NOT NULL, -- Agregamos UNIQUE aquí
     password VARCHAR(255) NOT NULL,
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
