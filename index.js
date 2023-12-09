@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const { conectarBaseDeDatos } = require("./conexion");
+// const { conectarBaseDeDatos } = require("./conexion");
 
 
 const app = express();
@@ -11,8 +11,12 @@ app.use(cors());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-conectarBaseDeDatos();
+// conectarBaseDeDatos();
 
+// Ruta GET de bienvenida
+app.get("/", (req, res) => {
+    res.send("¡Bienvenido a mi aplicación!");
+  });
 
 app.listen(port, () => {
   console.log(`El servidor esta corriendo en el puerto = ${port}`);
