@@ -14,7 +14,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
   res.json({
     saludos_de_parte_del_Administrador:
-      "Hola para usar los datos ,necesitaras  de un token de autenticacion me hablas gogo :v",
+      "Hola para usar los datos ,necesitaras  de un token de autenticacion ",
   });
 });
 
