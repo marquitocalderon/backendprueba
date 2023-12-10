@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const nodemailer = require("nodemailer");
 const { conectarBaseDeDatos , conectar } = require("./conexion");
 const rutas = require("./src/routes/rutas");
 const { config } = require('dotenv');
@@ -18,6 +19,7 @@ app.use(rutas);
 
 
 config()
+
 
 
 app.listen(process.env.PUERTO, () => {

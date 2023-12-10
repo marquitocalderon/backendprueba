@@ -1,6 +1,6 @@
 const { conectar } = require("../../conexion");
 const bcryptjs = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+
 
 const registrarUsuariosAdmin = async (req, res) => {
   const {nombre_completo, correo, dni, departamento, provincia, distrito, usuario, password } = req.body;
