@@ -1,5 +1,3 @@
-SCRIPT SOLO PARA PostgreSQL , SOLO PARA ESO FUNCIONA
-
 -- Crear la tabla de perfiles
 CREATE TABLE perfiles (
     idperfil SERIAL PRIMARY KEY,
@@ -11,13 +9,30 @@ CREATE TABLE usuarios (
     idusuario SERIAL PRIMARY KEY,
     nombre_completo VARCHAR(50) NOT NULL,
     correo VARCHAR(100) UNIQUE NOT NULL,
-    dni VARCHAR(08) UNIQUE NOT NULL,
+    dni VARCHAR(8) UNIQUE NOT NULL,  -- Corregido a VARCHAR(8)
     departamento VARCHAR(50) NOT NULL,
     provincia VARCHAR(50) NOT NULL,
     distrito VARCHAR(50) NOT NULL,
-    usuario VARCHAR(50) UNIQUE NOT NULL, -- Agregamos UNIQUE aquí
+    usuario VARCHAR(50) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     estado BOOLEAN NOT NULL,
     idperfil INTEGER REFERENCES perfiles(idperfil)
+);
+
+CREATE TABLE habitaciones (
+    id_habitacion SERIAL PRIMARY KEY,
+    numero_habitacion VARCHAR(50) NOT NULL,
+    imagen VARCHAR(250) NOT NULL,
+    tipo_habitacion VARCHAR(50) NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL,
+    disponible BOOLEAN NOT NULL
+);
+
+CREATE TABLE reservas (
+    id_reserva SERIAL PRIMARY KEY,
+    fechainicio DATE,
+    fechafin DATE,
+    idusuario INTEGER REFERENCES usuarios(idusuario),
+    id_habitacion INTEGER REFERENCES habitaciones(id_habitacion)
 );
