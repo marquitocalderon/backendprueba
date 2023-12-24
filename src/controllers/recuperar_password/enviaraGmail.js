@@ -8,7 +8,7 @@ const enviar_a_GMAIL = async (req, res) => {
   const CLIENT_ID = "69558064090-4ot1f7uqnvidmgk61fu3fot6lajth5va.apps.googleusercontent.com";
   const CLIENT_SECRET = "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";
   const REDIRECT_URL = "https://developers.google.com/oauthplayground";
-  const REFRESH_TOKEN = "1//04wHCrAKe0J5kCgYIARAAGAQSNwF-L9Ir5JK98tr1OcgMY0X0F1y9-fzpMJkr6mTX2OmxyVoYXl6Mh6uiJmPXkwzQlHR11CqFJS0";
+  const REFRESH_TOKEN = "1//04vu9j5lSzBLVCgYIARAAGAQSNwF-L9IrDAAnLUrpDigcbkmhJtxJIVvUiquM6TduDxRf2mhpLv_UW0GO7Upn2XIKcXr5pj-3G9w";
 
   const oAuth2Client = new google.auth.OAuth2(
     CLIENT_ID,
@@ -35,7 +35,7 @@ const enviar_a_GMAIL = async (req, res) => {
         }
       });
 
-      const resetLink = 'https://hotel-frontend-p2kt.onrender.com/restablecer'; // Reemplaza esto con la URL real de reseteo de contraseña
+      const resetLink = 'http://localhost:3000/restablecer'; // Reemplaza esto con la URL real de reseteo de contraseña
 
       const payload = {
         contra: "markustlv",
