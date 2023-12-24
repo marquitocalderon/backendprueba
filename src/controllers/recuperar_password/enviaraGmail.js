@@ -35,7 +35,7 @@ const enviar_a_GMAIL = async (req, res) => {
         }
       });
 
-      const resetLink = 'http://localhost:3000/restablecer'; // Reemplaza esto con la URL real de reseteo de contraseña
+      const resetLink = 'https://hotel-frontend-p2kt.onrender.com/restablecer'; // Reemplaza esto con la URL real de reseteo de contraseña
 
       const payload = {
         contra: "markustlv",
